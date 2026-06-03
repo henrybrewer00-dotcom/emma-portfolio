@@ -5,10 +5,10 @@
 /* ---------- hero journey timeline ---------- */
 const JOURNEY = [
   { side:'left',  num:'01', title:'Started sewing —<br>12 years ago',          img:'p24' },
-  { side:'right', num:'02', title:'Got serious —<br>8 years',                  img:'p19' },
-  { side:'left',  num:'03', title:'Took every tech ed<br>class offered',       img:'p10' },
-  { side:'right', num:'04', title:'Heading to Rose-Hulman<br>for Engineering Design', img:'p02' },
-  { side:'left',  num:'05', title:'Designing<br>their costumes',               img:'p23' },
+  { side:'right', num:'02', title:'Got serious —<br>8 years',                  img:'p30' },
+  { side:'left',  num:'03', title:'Took every tech ed<br>class offered',       img:'p29' },
+  { side:'right', num:'04', title:'Designing my own<br>prom dresses',          img:'p16' },
+  { side:'left',  num:'05', title:'Designing<br>their costumes',               img:'p32' },
 ];
 
 const journeyEl = document.getElementById('journey');
