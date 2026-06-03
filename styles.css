@@ -115,7 +115,7 @@ button{ font-family:inherit; cursor:pointer; }
 .hero{ position:relative; padding:36px 0 80px; }
 .hero .wrap{
   display:grid;
-  grid-template-columns:minmax(330px,1fr) minmax(420px,1.15fr) 150px;
+  grid-template-columns:minmax(330px,1fr) minmax(420px,1.15fr) 250px;
   gap:30px; align-items:start;
 }
 
@@ -191,11 +191,12 @@ button{ font-family:inherit; cursor:pointer; }
 .t-row.left  .t-node::after{ right:30px; border-right-color:var(--blush-deep); }
 .t-row.right .t-node::after{ left:30px;  border-left-color:var(--blush-deep); }
 
-/* --- hero right : dress-form + needle-and-thread line art --- */
-.hero-deco{ position:relative; align-self:stretch; }
+/* --- hero right : dress-form + needle-and-thread line art ---
+   bigger, and anchored to the BOTTOM of the home section            */
+.hero-deco{ position:relative; align-self:end; }
 .hero-deco .deco-art{
-  width:auto; height:100%; min-height:560px; max-height:680px;
-  margin-left:auto; display:block; object-fit:contain; object-position:top right;
+  width:300px; max-width:none; height:auto; display:block;
+  margin:0 -18px -6px auto;   /* nudge toward the right edge, kiss the section bottom */
 }
 
 /* ============================================================
