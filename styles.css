@@ -192,11 +192,11 @@ button{ font-family:inherit; cursor:pointer; }
 .t-row.right .t-node::after{ left:30px;  border-left-color:var(--blush-deep); }
 
 /* --- hero right : dress-form + needle-and-thread line art ---
-   bigger, and anchored to the BOTTOM of the home section            */
-.hero-deco{ position:relative; align-self:end; }
+   bigger, sitting up near the top-right so it's visible without scrolling */
+.hero-deco{ position:relative; align-self:start; }
 .hero-deco .deco-art{
   width:300px; max-width:none; height:auto; display:block;
-  margin:0 -18px -6px auto;   /* nudge toward the right edge, kiss the section bottom */
+  margin:24px -18px 0 auto;   /* nudge toward the right edge, near the top */
 }
 
 /* ============================================================
