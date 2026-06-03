@@ -299,7 +299,16 @@
 <div class="modal" id="modal" aria-hidden="true">
   <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="mTitle">
     <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-    <div class="modal-figure"><img id="mImg" src="" alt=""></div>
+    <div class="modal-figure">
+      <button class="car-nav prev" id="carPrev" aria-label="Previous photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <img id="mImg" src="" alt="">
+      <button class="car-nav next" id="carNext" aria-label="Next photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <div class="car-thumbs" id="carThumbs"></div>
+    </div>
     <div class="modal-info">
       <div class="modal-top">
         <span class="k"><svg class="btn-dot" viewBox="0 0 100 100" style="width:18px;height:18px"><use href="#btn"/></svg> Handmade by Emma</span>
