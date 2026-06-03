@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emma — Seamstress &amp; Designer</title>
+<meta name="description" content="Emma — a completely self-taught seamstress and designer. Custom gowns, costumes, and one-of-a-kind pieces.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ====== reusable SVG symbols ====== -->
+<svg class="sym" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="btn" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="48"/>
+    <circle cx="37" cy="37" r="7" fill="#fff"/>
+    <circle cx="63" cy="37" r="7" fill="#fff"/>
+    <circle cx="37" cy="63" r="7" fill="#fff"/>
+    <circle cx="63" cy="63" r="7" fill="#fff"/>
+  </symbol>
+</svg>
+
+<!-- ====== tape-measure scroll bar ====== -->
+<div class="tape" aria-hidden="true">
+  <div class="ticks"></div>
+  <div class="ticks major"></div>
+  <div class="marker" id="tapeMarker" data-in="0"></div>
+</div>
+
+<!-- ====== NAV ====== -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#home">
+      <svg class="btn-dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+      <span class="name">Emma</span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6859a" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <svg class="btn-dot ring" viewBox="0 0 100 100" style="display:none"><use href="#btn"/></svg>
+  </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="home">
+  <div class="wrap">
+
+    <!-- left -->
+    <div class="hero-left">
+      <h1 class="hero-name">Emma</h1>
+      <!-- stitched underline ending in a needle + thread -->
+      <svg class="hero-underline" viewBox="0 0 420 26" fill="none">
+        <line x1="2" y1="13" x2="360" y2="13" stroke="#e9b6c4" stroke-width="2.5" stroke-dasharray="8 7" stroke-linecap="round"/>
+        <path d="M360 13 q22 -10 44 -2" stroke="#e9b6c4" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="406" cy="11" r="3" fill="#d6859a"/>
+        <line x1="406" y1="11" x2="416" y2="5" stroke="#d6859a" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <p class="hero-tag">I'm a seamstress and designer who loves turning ideas into something beautiful and one-of-a-kind.</p>
+      <a class="cta" href="#portfolio">
+        View My Work
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12h6M13 8l4 4-4 4"/></svg>
+      </a>
+
+      <!-- qualities card -->
+      <div class="quality">
+        <div class="q">
+          <svg viewBox="0 0 48 48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="8" r="2.4"/><path d="M24 10.4V14"/><path d="M16 16c4-2.5 12-2.5 16 0l1.6 12c-4 3-15.2 3-19.2 0z"/><path d="M21 28h6l2.4 12H18.6z"/><path d="M19 40h10"/></svg>
+          <b>Sewing</b><span>Expert Craftsmanship</span>
+        </div>
+        <div class="q">
+          <svg viewBox="0 0 48 48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="4"/><circle cx="12" cy="35" r="4"/><path d="M15 15l23 18M15 33 38 15"/></svg>
+          <b>Design</b><span>Creative &amp; Unique</span>
+        </div>
+        <div class="q">
+          <svg viewBox="0 0 48 48" stroke-width="1.6"><circle cx="24" cy="24" r="14"/><circle cx="19" cy="19" r="2.4"/><circle cx="29" cy="19" r="2.4"/><circle cx="19" cy="29" r="2.4"/><circle cx="29" cy="29" r="2.4"/></svg>
+          <b>Details</b><span>Precise Finishes</span>
+        </div>
+        <div class="q">
+          <svg viewBox="0 0 48 48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10h22"/><path d="M13 38h22"/><rect x="18" y="10" width="12" height="28"/><path d="M18 17h12M18 24h12M18 31h12"/></svg>
+          <b>Quality</b><span>Made to Last</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- center : journey timeline -->
+    <div class="timeline" id="journey">
+      <!-- rows are filled by script.js -->
+    </div>
+
+    <!-- right : dress-form + needle-and-thread line art -->
+    <div class="hero-deco" aria-hidden="true">
+      <img class="deco-art" src="assets/img/form-art.png" alt="">
+    </div>
+
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">About</span>
+      <h2 class="sec-title">The Hands Behind the Work
+        <svg class="stitch" viewBox="0 0 140 14"><line x1="4" y1="7" x2="136" y2="7" stroke="#e9b6c4" stroke-width="2.5" stroke-dasharray="8 7" stroke-linecap="round" pathLength="100"/></svg>
+      </h2>
+      <p class="sec-sub">Completely self-taught over the last twelve years, Emma turns sketches, fabric, and a lot of patience into gowns, costumes, and tailored pieces — each one entirely one-of-a-kind. She's headed to Rose-Hulman Institute of Technology for Material Design, where she'll also be designing costumes for their productions.</p>
+    </div>
+    <div class="exp-stats reveal">
+      <div class="stat"><b>12</b><span>Years Sewing</span></div>
+      <div class="stat"><b>100%</b><span>Self-Taught</span></div>
+      <div class="stat"><b>4.2</b><span>Weighted GPA</span></div>
+      <div class="stat"><b>1&ordm;</b><span>Award-Winning</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PORTFOLIO ====== -->
+<section class="section alt" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Portfolio</span>
+      <h2 class="sec-title">Selected Work
+        <svg class="stitch" viewBox="0 0 140 14"><line x1="4" y1="7" x2="136" y2="7" stroke="#e9b6c4" stroke-width="2.5" stroke-dasharray="8 7" stroke-linecap="round"/></svg>
+      </h2>
+      <p class="sec-sub">Every piece below was designed and sewn by hand. Click any photo to see how it was made.</p>
+    </div>
+    <div class="gallery reveal" id="gallery"><!-- filled by script.js --></div>
+  </div>
+</section>
+
+<!-- ====== SERVICES ====== -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Services</span>
+      <h2 class="sec-title">What Emma Makes
+        <svg class="stitch" viewBox="0 0 140 14"><line x1="4" y1="7" x2="136" y2="7" stroke="#e9b6c4" stroke-width="2.5" stroke-dasharray="8 7" stroke-linecap="round"/></svg>
+      </h2>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc">
+        <svg viewBox="0 0 48 48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c2 3 4 4 6 4s4-1 6-4"/><path d="M19.5 9 18 21h12L28.5 9"/><path d="M18 21 13 41h22l-5-20"/></svg>
+        <h3>Custom Gowns</h3>
+        <p>Eveningwear, formal, and bridal-style gowns drafted and sewn to fit one person perfectly.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 48 48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 12c7-2 15-2 22 0 0 15-6 23-11 23S13 27 13 12z"/><path d="M19 21c1.2 1 3 1 4.2 0"/><path d="M24.8 21c1.2 1 3 1 4.2 0"/><path d="M19 29c2.6 2 7.4 2 10 0"/></svg>
+        <h3>Costume Design</h3>
+        <p>Theatrical and character costuming — head costume designer for three high-school productions.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 48 48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="4"/><circle cx="12" cy="35" r="4"/><path d="M15 15l23 18M15 33 38 15"/></svg>
+        <h3>Tailoring &amp; Alterations</h3>
+        <p>Hems, take-ins, and refits — the kind of careful finishing that makes off-the-rack feel custom.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 48 48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="9" width="11" height="30" rx="2"/><path d="M10 15h5M10 21h5M10 27h5M10 33h5"/><path d="M28 13l8 8-13 14-9 2 2-9z"/><path d="M28 13l8 8"/></svg>
+        <h3>Pattern &amp; Bespoke</h3>
+        <p>Original pattern drafting and from-scratch design for pieces that don't exist anywhere else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== EXPERIENCE ====== -->
+<section class="section alt" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Experience</span>
+      <h2 class="sec-title">Awards, Education &amp; Beyond
+        <svg class="stitch" viewBox="0 0 140 14"><line x1="4" y1="7" x2="136" y2="7" stroke="#e9b6c4" stroke-width="2.5" stroke-dasharray="8 7" stroke-linecap="round"/></svg>
+      </h2>
+      <p class="sec-sub">Sewing is one half of the story — the other half is engineering, theater, and a lot of curiosity.</p>
+    </div>
+
+    <div class="exp-cols">
+      <!-- column 1: awards + experience -->
+      <div class="exp-block reveal">
+        <h3><svg class="btn-dot" viewBox="0 0 100 100"><use href="#btn"/></svg>Awards &amp; Honors</h3>
+        <ul class="elist">
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>1st &amp; 2nd Place — Local Design Competition</b>
+            <span>Took home both top spots for her dresses against the field.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>1st Place — Local Engineering Competition</b>
+            <span>Ranked #1 for her engineering project.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Automotive Excellence Award</b>
+            <span>For dedication and for helping prepare the class for future students.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Most Compassionate Student — Operation Catapult, Rose-Hulman</b>
+            <span>Recognized for kindness and dedication to her classmates.</span></li>
+        </ul>
+
+        <h3 style="margin-top:40px"><svg class="btn-dot" viewBox="0 0 100 100"><use href="#btn"/></svg>Experience &amp; Projects</h3>
+        <ul class="elist">
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Building a 4&times;4 Workbench <em style="font-style:normal;color:var(--rose);font-size:12px;letter-spacing:.08em">· IN PROGRESS</em></b>
+            <span>Currently designing and building a 4&times;4 workbench from scratch.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Head Costume Designer — 3 Drama Productions</b>
+            <span>Designed and built costumes for three high-school theater shows.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>MIT CubeSat Project — Finalist</b>
+            <span>Independently, with friends, designed a mini satellite to orbit the Moon and scout points of interest for NASA.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Costume Design Program — UCLA</b>
+            <span>Completed a summer costuming program at UCLA.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Operation Catapult — Rose-Hulman</b>
+            <span>Summer engineering immersion program.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Community Car Show</b>
+            <span>Helped organize and run a local car show.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Alterations &amp; Tailoring</b>
+            <span>Ongoing hemming and alterations for family and friends.</span></li>
+        </ul>
+      </div>
+
+      <!-- column 2: education + coursework -->
+      <div class="exp-block reveal">
+        <h3><svg class="btn-dot" viewBox="0 0 100 100"><use href="#btn"/></svg>Education</h3>
+        <ul class="elist">
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Rose-Hulman Institute of Technology — Incoming</b>
+            <span>Material Design. Already in touch with the department and set to design costumes for their productions.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>4.2 Weighted GPA</b>
+            <span>Top of her class while taking the most demanding course load offered.</span></li>
+          <li><svg class="dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+            <b>Completely Self-Taught Seamstress</b>
+            <span>12 years sewing — 8 of them serious — with no formal training.</span></li>
+        </ul>
+
+        <h3 style="margin-top:40px"><svg class="btn-dot" viewBox="0 0 100 100"><use href="#btn"/></svg>Coursework</h3>
+        <p style="font-size:13.5px;color:var(--ink-soft);margin:0 0 4px">Took every tech-ed and engineering class her school offers:</p>
+        <div class="chips">
+          <span class="chip">Applied Physics &amp; Engineering (Honors)</span>
+          <span class="chip">Calculus AB</span>
+          <span class="chip">Physics</span>
+          <span class="chip">Independent Art</span>
+          <span class="chip">Stagecraft</span>
+          <span class="chip">Design &amp; Fabrication</span>
+          <span class="chip">Autoshop</span>
+          <span class="chip">Advanced Autoshop</span>
+          <span class="chip">Woodshop</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTACT ====== -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Contact</span>
+      <h2 class="sec-title">Let's Make Something
+        <svg class="stitch" viewBox="0 0 140 14"><line x1="4" y1="7" x2="136" y2="7" stroke="#e9b6c4" stroke-width="2.5" stroke-dasharray="8 7" stroke-linecap="round"/></svg>
+      </h2>
+    </div>
+    <div class="contact-card reveal">
+      <p>Have a gown, costume, or alteration in mind? Emma would love to hear about it — every piece starts with a conversation.</p>
+      <div class="contact-actions">
+        <a class="primary" href="mailto:emmalynnbrewer@icloud.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          emmalynnbrewer@icloud.com
+        </a>
+        <a class="ghost" href="https://instagram.com/sewingandotherstuff" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @Sewingandotherstuff
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="foot">
+  <div class="brand">
+    <svg class="btn-dot" viewBox="0 0 100 100"><use href="#btn"/></svg>
+    <span class="name" style="font-family:var(--serif);font-size:26px;color:var(--rose)">Emma</span>
+  </div>
+  <div>Seamstress &amp; Designer · Handmade, one-of-a-kind</div>
+  <div style="margin-top:8px;opacity:.7">&copy; <span id="year"></span> Emma</div>
+</footer>
+
+<!-- ====== MODAL ====== -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-figure"><img id="mImg" src="" alt=""></div>
+    <div class="modal-info">
+      <div class="modal-top">
+        <span class="k"><svg class="btn-dot" viewBox="0 0 100 100" style="width:18px;height:18px"><use href="#btn"/></svg> Handmade by Emma</span>
+        <h2 id="mTitle">Piece</h2>
+        <span class="modal-tag" id="mMeta"></span>
+      </div>
+      <div class="modal-note">
+        <span class="note-label">— How it was made —</span>
+        <p class="desc placeholder" id="mDesc">Put description of how you made it.</p>
+      </div>
+      <div class="modal-foot">One-of-a-kind · designed &amp; sewn by hand</div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
