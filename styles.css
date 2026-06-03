@@ -22,7 +22,7 @@
 }
 
 *{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; overflow-x:hidden; max-width:100%; }
 body{
   margin:0;
   font-family:var(--sans);
@@ -395,8 +395,13 @@ button{ font-family:inherit; cursor:pointer; }
    RESPONSIVE — hero collapse
    ============================================================ */
 @media (max-width:1080px){
-  .hero .wrap{ grid-template-columns:1fr; }
+  .hero .wrap{ grid-template-columns:minmax(0,1fr); }
   .hero-deco{ display:none; }
+  .hero-left{ min-width:0; max-width:100%; }
+  .hero-left > *{ max-width:100%; }
+  .hero-name{ white-space:normal; overflow-wrap:anywhere; }
+  .hero-tag{ max-width:100%; }
+  .quality{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .timeline{ max-width:620px; margin:30px auto 0; }
 }
 @media (max-width:880px){
@@ -411,7 +416,22 @@ button{ font-family:inherit; cursor:pointer; }
   .quality{ grid-template-columns:repeat(2,1fr); gap:18px 6px; }
   .quality .q:nth-child(3)::before{ display:none; }
 }
+/* ---- phones: stack the timeline into one clean full-width column ---- */
+@media (max-width:700px){
+  .timeline::before{ display:none; }
+  .t-row,
+  .t-row.left,
+  .t-row.right{ grid-template-columns:1fr; gap:0; margin-bottom:40px; min-height:0; }
+  .t-node{ display:none; }
+  .t-row .t-text,
+  .t-row.right .t-text{ order:1; text-align:left; padding:0 0 12px; }
+  .t-row .t-photo,
+  .t-row.left .t-photo,
+  .t-row.right .t-photo{ order:2; padding:0; }
+  .t-photo img{ width:100%; height:auto; }
+  .t-num{ font-size:26px; }
+  .t-text h3{ font-size:20px; }
+}
 @media (max-width:560px){
-  .hero-name{ font-size:78px; }
-  .t-photo img{ height:120px; }
+  .hero-name{ font-size:64px; }
 }

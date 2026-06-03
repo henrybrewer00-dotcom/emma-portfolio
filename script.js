@@ -29,8 +29,6 @@ const GALLERY = [
   { img:'p27', title:'Light-Up Ball Gown',      meta:'LED-lit tulle · color-changing · lace-up boots' },
   { img:'p28', title:'Floral Appliqué Gown',    meta:'Sheer tulle · 3D floral appliqué · pink sash' },
   { img:'p02', title:'Sage Satin Gown',         meta:'Lace-up bodice · floor length' },
-  { img:'p15', title:'Champagne Appliqué Gown', meta:'Floral appliqué straps · full skirt' },
-  { img:'p26', title:'Chunky Knit Coat',        meta:'Hand-knit · oversized · chunky wool' },
   { img:'p11', title:'Tailored Plaid Jacket',   meta:'Cropped · fully lined' },
   { img:'p17', title:'Knit A-Line Dress',       meta:'Sleeveless · structured skirt' },
 ];
