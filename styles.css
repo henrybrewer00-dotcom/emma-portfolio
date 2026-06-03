@@ -195,8 +195,8 @@ button{ font-family:inherit; cursor:pointer; }
    bigger, sitting up near the top-right so it's visible without scrolling */
 .hero-deco{ position:relative; align-self:start; }
 .hero-deco .deco-art{
-  width:300px; max-width:none; height:auto; display:block;
-  margin:24px -18px 0 auto;   /* nudge toward the right edge, near the top */
+  width:400px; max-width:none; height:auto; display:block;
+  margin:24px -56px 0 auto;   /* bigger; pushed toward the right page edge */
 }
 
 /* ============================================================
