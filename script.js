@@ -24,17 +24,28 @@ journeyEl.innerHTML = JOURNEY.map(m => `
    Description is intentionally a placeholder for Emma to fill in.   */
 /* each gown groups all its distinct images; imgs[0] is the cover */
 const GALLERY = [
-  { title:'The Storybook Gown',   meta:'Cream cotton · hand-inked literary bodice',     imgs:['p01','p03','p04','p05','p07'] },
+  { title:'The Storybook Gown',   meta:'Cream cotton · hand-inked literary bodice',     imgs:['p01','p03','p04','p05','p07','p08'] },
   { title:'Crimson Ruffle Gown',  meta:'Bias-cut · cascading ruffle & slit',            imgs:['p16','p12','p23'] },
   { title:'Gold Bias Gown',       meta:'1930s-inspired satin · cowl neck',              imgs:['p33','p19','p20'] },
   { title:'Emerald Satin Gown',   meta:'Flutter sleeves · open back · sweep train',     imgs:['p35','p37','p36'] },
-  { title:'Light-Up Ball Gown',   meta:'LED-lit tulle · color-changing · lace-up boots',imgs:['p27','p29'] },
+  { title:'Light-Up Ball Gown',   meta:'LED-lit tulle · color-changing · lace-up boots',imgs:['p29','p27'] },
   { title:'Floral Appliqué Gown', meta:'Sheer tulle · 3D floral appliqué · pink sash',  imgs:['p28','p25'] },
-  { title:'Sage Satin Gown',      meta:'Lace-up bodice · floor length',                 imgs:['p02'] },
+  { title:'Sage Satin Gown',      meta:'Lace-up bodice · floor length',                 imgs:['p02','p42'] },
+  { title:'Champagne Lace-Up Gown',meta:'Satin · lace-up back · garden',                imgs:['p41'] },
+  { title:'Olive Satin Dress',    meta:'Long sleeves · draped satin',                   imgs:['p43'] },
   { title:'Pink Gingham Sundress',meta:'Gingham · fit-and-flare · handmade',            imgs:['p39'] },
-  { title:'Tailored Plaid Jacket',meta:'Cropped · fully lined',                         imgs:['p11','p09'] },
+  { title:'Tailored Plaid Jacket',meta:'Cropped · fully lined',                         imgs:['p09','p11'] },
   { title:'Knit A-Line Dress',    meta:'Sleeveless · structured skirt',                 imgs:['p17','p18'] },
+  { title:'Light Blue Knit Top',  meta:'Boat-neck · fitted · handmade',                 imgs:['p40'] },
 ];
+
+/* CubeSat engineering project — opens in the same carousel */
+const CUBESAT = {
+  title:'The CubeSat Project',
+  meta:'MIT CubeSat Initiative · Finalist · Lunar imaging',
+  imgs:['cs1','cs2','cs4','cs6','cs3','cs5'],
+};
+const CUBESAT_DESC = "An MIT CubeSat Initiative finalist. Working independently with a small team of friends, Emma helped design a miniature satellite built to orbit the Moon and scout surface points of interest for NASA — including hand-building and testing imaging against a simulated lunar surface: the regolith craters and foam terrain models shown here.";
 
 const galleryEl = document.getElementById('gallery');
 galleryEl.innerHTML = GALLERY.map((g,i) => `
@@ -56,10 +67,12 @@ const modalClose = document.getElementById('modalClose');
 const carThumbs = document.getElementById('carThumbs');
 const carPrev   = document.getElementById('carPrev');
 const carNext   = document.getElementById('carNext');
-let curG = 0, curImg = 0;
+const mKicker   = document.getElementById('mKicker');
+const mNote     = document.getElementById('mNote');
+let curSet = null, curImg = 0;
 
 function renderCarousel(){
-  const imgs = GALLERY[curG].imgs;
+  const imgs = curSet.imgs;
   const multi = imgs.length > 1;
   modalImg.src = `assets/img/${imgs[curImg]}.jpg`;
   carPrev.style.display = carNext.style.display = multi ? '' : 'none';
@@ -69,21 +82,31 @@ function renderCarousel(){
      </button>`).join('') : '';
 }
 function step(d){
-  const len = GALLERY[curG].imgs.length;
+  const len = curSet.imgs.length;
   curImg = (curImg + d + len) % len;
   renderCarousel();
 }
-function openModal(i){
-  const g = GALLERY[i];
-  curG = i; curImg = 0;
-  modalImg.alt = g.title;
-  modalTitle.textContent = g.title;
-  modalMeta.textContent  = g.meta;
-  modalDesc.textContent  = 'Put description of how you made it.';
+function openSet(set, opt, startIdx){
+  curSet = set; curImg = startIdx || 0;
+  modalImg.alt = set.title;
+  modalTitle.textContent = set.title;
+  modalMeta.textContent  = set.meta;
+  mKicker.textContent = opt.kicker;
+  mNote.textContent   = opt.note;
+  modalDesc.textContent = opt.desc;
+  modalDesc.classList.toggle('placeholder', !!opt.placeholder);
   renderCarousel();
   modal.classList.add('open');
   modal.setAttribute('aria-hidden','false');
   document.body.style.overflow = 'hidden';
+}
+function openModal(i){
+  openSet(GALLERY[i], { kicker:'Handmade by Emma', note:'— How it was made —',
+                        desc:'Put description of how you made it.', placeholder:true });
+}
+function openCubesat(idx){
+  openSet(CUBESAT, { kicker:'MIT CubeSat · Finalist', note:'— About the project —',
+                     desc:CUBESAT_DESC, placeholder:false }, idx);
 }
 carPrev.addEventListener('click', () => step(-1));
 carNext.addEventListener('click', () => step(1));
@@ -91,6 +114,20 @@ carThumbs.addEventListener('click', e => {
   const t = e.target.closest('.car-thumb');
   if (t){ curImg = +t.dataset.idx; renderCarousel(); }
 });
+
+/* CubeSat grid */
+const csEl = document.getElementById('cubesatGrid');
+if (csEl){
+  csEl.innerHTML = CUBESAT.imgs.map((im,i) => `
+    <button class="tile" data-i="${i}" aria-label="CubeSat photo ${i+1}">
+      <img src="assets/img/${im}.jpg" alt="CubeSat project" loading="lazy">
+      <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="#d6859a" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
+    </button>`).join('');
+  csEl.addEventListener('click', e => {
+    const t = e.target.closest('.tile');
+    if (t) openCubesat(+t.dataset.i);
+  });
+}
 function closeModal(){
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden','true');

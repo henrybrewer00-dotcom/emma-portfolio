@@ -42,6 +42,7 @@
       <a href="#portfolio">Portfolio</a>
       <a href="#services">Services</a>
       <a href="#experience">Experience</a>
+      <a href="#cubesat">CubeSat</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -260,8 +261,28 @@
   </div>
 </section>
 
+<!-- ====== CUBESAT ====== -->
+<section class="section" id="cubesat">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Engineering &middot; Aerospace</span>
+      <h2 class="sec-title">The CubeSat Project
+        <svg class="stitch" viewBox="0 0 140 14"><line x1="4" y1="7" x2="136" y2="7" stroke="#e9b6c4" stroke-width="2.5" stroke-dasharray="8 7" stroke-linecap="round"/></svg>
+      </h2>
+      <p class="sec-sub">An <strong>MIT CubeSat Initiative finalist</strong>. Independently, with a small team of friends, Emma helped design a miniature satellite built to orbit the Moon and scout surface points of interest for NASA — hand-building and testing imaging against a simulated lunar surface. Click any photo to take a closer look.</p>
+    </div>
+    <div class="exp-stats reveal">
+      <div class="stat"><b>MIT</b><span>CubeSat Initiative</span></div>
+      <div class="stat"><b>Finalist</b><span>National Field</span></div>
+      <div class="stat"><b>Moon</b><span>Orbit &amp; Imaging</span></div>
+      <div class="stat"><b>NASA</b><span>Points of Interest</span></div>
+    </div>
+    <div class="gallery reveal" id="cubesatGrid"><!-- filled by script.js --></div>
+  </div>
+</section>
+
 <!-- ====== CONTACT ====== -->
-<section class="section" id="contact">
+<section class="section alt" id="contact">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-kicker">Contact</span>
@@ -311,12 +332,12 @@
     </div>
     <div class="modal-info">
       <div class="modal-top">
-        <span class="k"><svg class="btn-dot" viewBox="0 0 100 100" style="width:18px;height:18px"><use href="#btn"/></svg> Handmade by Emma</span>
+        <span class="k"><svg class="btn-dot" viewBox="0 0 100 100" style="width:18px;height:18px"><use href="#btn"/></svg> <span id="mKicker">Handmade by Emma</span></span>
         <h2 id="mTitle">Piece</h2>
         <span class="modal-tag" id="mMeta"></span>
       </div>
       <div class="modal-note">
-        <span class="note-label">— How it was made —</span>
+        <span class="note-label" id="mNote">— How it was made —</span>
         <p class="desc placeholder" id="mDesc">Put description of how you made it.</p>
       </div>
       <div class="modal-foot">One-of-a-kind · designed &amp; sewn by hand</div>
