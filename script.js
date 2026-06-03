@@ -4,7 +4,7 @@
 
 /* ---------- hero journey timeline ---------- */
 const JOURNEY = [
-  { side:'left',  num:'01', title:'Started sewing —<br>12 years ago',          img:'p06' },
+  { side:'left',  num:'01', title:'Started sewing —<br>12 years ago',          img:'p24' },
   { side:'right', num:'02', title:'Got serious —<br>8 years',                  img:'p19' },
   { side:'left',  num:'03', title:'Took every tech ed<br>class offered',       img:'p10' },
   { side:'right', num:'04', title:'Heading to Rose-Hulman<br>for Engineering Design', img:'p02' },
