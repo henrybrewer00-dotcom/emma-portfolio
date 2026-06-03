@@ -26,12 +26,11 @@ journeyEl.innerHTML = JOURNEY.map(m => `
 const GALLERY = [
   { title:'The Storybook Gown',   meta:'Cream cotton · hand-inked literary bodice',     imgs:['p01','p03','p04','p05','p07','p08'] },
   { title:'Crimson Ruffle Gown',  meta:'Bias-cut · cascading ruffle & slit',            imgs:['p16','p12','p23'] },
-  { title:'Gold Bias Gown',       meta:'1930s-inspired satin · cowl neck',              imgs:['p33','p19','p20'] },
+  { title:'Gold Bias Gown',       meta:'1930s-inspired satin · cowl neck',              imgs:['p33','p41','p19','p20'] },
   { title:'Emerald Satin Gown',   meta:'Flutter sleeves · open back · sweep train',     imgs:['p35','p37','p36'] },
   { title:'Light-Up Ball Gown',   meta:'LED-lit tulle · color-changing · lace-up boots',imgs:['p29','p27'] },
   { title:'Floral Appliqué Gown', meta:'Sheer tulle · 3D floral appliqué · pink sash',  imgs:['p28','p25'] },
   { title:'Sage Satin Gown',      meta:'Lace-up bodice · floor length',                 imgs:['p02','p42'] },
-  { title:'Champagne Lace-Up Gown',meta:'Satin · lace-up back · garden',                imgs:['p41'] },
   { title:'Olive Satin Dress',    meta:'Long sleeves · draped satin',                   imgs:['p43'] },
   { title:'Pink Gingham Sundress',meta:'Gingham · fit-and-flare · handmade',            imgs:['p39'] },
   { title:'Tailored Plaid Jacket',meta:'Cropped · fully lined',                         imgs:['p09','p11'] },
