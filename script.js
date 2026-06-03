@@ -8,7 +8,7 @@ const JOURNEY = [
   { side:'right', num:'02', title:'Got serious —<br>8 years',                  img:'p30' },
   { side:'left',  num:'03', title:'Took every tech ed<br>class offered',       img:'p29' },
   { side:'right', num:'04', title:'Designing my own<br>prom dresses',          img:'p16' },
-  { side:'left',  num:'05', title:'Designing<br>their costumes',               img:'p32' },
+  { side:'left',  num:'05', title:'Committed to Furthering<br>Education at Rose-Hulman!', img:'p32' },
 ];
 
 const journeyEl = document.getElementById('journey');

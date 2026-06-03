@@ -165,7 +165,7 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .t-photo{ width:100%; }
 .t-photo img{
-  width:100%; height:150px; object-fit:cover; border-radius:16px;
+  width:100%; height:auto; display:block; border-radius:16px;
   box-shadow:0 14px 30px -16px rgba(0,0,0,.3);
 }
 .t-text{ padding:0 26px; }
