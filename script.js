@@ -27,9 +27,11 @@ const GALLERY = [
   { title:'The Storybook Gown',   meta:'Cream cotton · hand-inked literary bodice',     imgs:['p01','p03','p04','p05','p07'] },
   { title:'Crimson Ruffle Gown',  meta:'Bias-cut · cascading ruffle & slit',            imgs:['p16','p12','p23'] },
   { title:'Gold Bias Gown',       meta:'1930s-inspired satin · cowl neck',              imgs:['p33','p19','p20'] },
+  { title:'Emerald Satin Gown',   meta:'Flutter sleeves · open back · sweep train',     imgs:['p35','p37','p36'] },
   { title:'Light-Up Ball Gown',   meta:'LED-lit tulle · color-changing · lace-up boots',imgs:['p27','p29'] },
   { title:'Floral Appliqué Gown', meta:'Sheer tulle · 3D floral appliqué · pink sash',  imgs:['p28','p25'] },
   { title:'Sage Satin Gown',      meta:'Lace-up bodice · floor length',                 imgs:['p02'] },
+  { title:'Pink Gingham Sundress',meta:'Gingham · fit-and-flare · handmade',            imgs:['p39'] },
   { title:'Tailored Plaid Jacket',meta:'Cropped · fully lined',                         imgs:['p11','p09'] },
   { title:'Knit A-Line Dress',    meta:'Sleeveless · structured skirt',                 imgs:['p17','p18'] },
 ];
