@@ -24,11 +24,16 @@ journeyEl.innerHTML = JOURNEY.map(m => `
    Description is intentionally a placeholder for Emma to fill in.   */
 /* each gown groups all its distinct images; imgs[0] is the cover */
 const GALLERY = [
-  { title:'The Storybook Gown',   meta:'Cream cotton · hand-inked literary bodice',     imgs:['p01','p03','p04','p05','p07','p08'] },
-  { title:'Crimson Ruffle Gown',  meta:'Bias-cut · cascading ruffle & slit',            imgs:['p16','p12','p23'] },
-  { title:'Gold Bias Gown',       meta:'1930s-inspired satin · cowl neck',              imgs:['p33','p41','p19','p20'] },
-  { title:'Emerald Satin Gown',   meta:'Flutter sleeves · open back · sweep train',     imgs:['p35','p37','p36'] },
-  { title:'Light-Up Ball Gown',   meta:'LED-lit tulle · color-changing · lace-up boots',imgs:['p29','p27'] },
+  { title:'Story Book Dress',     meta:'Hand-illustrated bodice · lace-up back · 2021',  imgs:['p01','p03','p04','p05','p07','p08'],
+    desc:"This gown is a collaboration between a friend and I. I created the bodice and skirt, and she did the illustrations. Created in 2021, it was the first time that I lined a garment fully. It features a lace up back with metal grommets, full length gathered sleeves with button clasp cuffs, and a large skirt." },
+  { title:'Maroon Flounce Gown',  meta:'Flounce ruffles · off-shoulder · skirt train',  imgs:['p16','p12','p23'],
+    desc:"I created this dress as a project in my Independent Art class. I was heavily inspired by a Mirror Palais gown for the skirt, and used flounces for all of the ruffles. This dress features a lace up back (along with an invisible zipper), flounce sleeves that can be worn on or off the shoulders, and a long skirt train." },
+  { title:'Cream Graduation Gown',meta:'Two interchangeable skirts · lace-up back',      imgs:['p33','p41','p19','p20'],
+    desc:"This gown was created specifically to take graduation photos. It is made out of the same kind of fabric as my senior prom dress, and features hand sewn grommet holes for the lace up back, two skirts, and a gathered front. The two skirt options are a short half circle skirt, or a long bias cut one." },
+  { title:'Senior Prom Dress',    meta:'Original design · low back · pearl detail',      imgs:['p35','p37','p36'],
+    desc:"My senior prom dress was a completely original design. I hand drafted a pattern using my favorite custom top pattern, and created a low back and skirt to go along. It features a low back with a back necklace, along with hand sewn pearls on the top of the slit. The top portion is fully lined, and the skirt's seams are fully finished." },
+  { title:'Light Up Fairy Skirt', meta:'LED-lit tulle · lace trim · Halloween',          imgs:['p29','p27'],
+    desc:"This was a fun and short project for Halloween. I wanted to be a fairy, so I created a simple gathered skirt with some old lace on the bottom. However, I decided it needed something more — so I wove LED fairy lights all through the tulle to make it glow." },
   { title:'Floral Appliqué Gown', meta:'Sheer tulle · 3D floral appliqué · pink sash',  imgs:['p28','p25'] },
   { title:'Sage Satin Gown',      meta:'Lace-up bodice · floor length',                 imgs:['p02','p42'] },
   { title:'Olive Satin Dress',    meta:'Long sleeves · draped satin',                   imgs:['p43'] },
@@ -100,8 +105,9 @@ function openSet(set, opt, startIdx){
   document.body.style.overflow = 'hidden';
 }
 function openModal(i){
-  openSet(GALLERY[i], { kicker:'Handmade by Emma', note:'— How it was made —',
-                        desc:'Put description of how you made it.', placeholder:true });
+  const g = GALLERY[i];
+  openSet(g, { kicker:'Handmade by Emma', note:'— How it was made —',
+               desc: g.desc || 'Put description of how you made it.', placeholder: !g.desc });
 }
 function openCubesat(idx){
   openSet(CUBESAT, { kicker:'MIT Beaver Works · Finalist', note:'— About the project —',
