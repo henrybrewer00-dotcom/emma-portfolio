@@ -295,16 +295,20 @@ button{ font-family:inherit; cursor:pointer; }
 .elist li b{ display:block; font-weight:600; font-size:15.5px; color:var(--ink); }
 .elist li span{ display:block; font-size:13.5px; color:var(--ink-soft); margin-top:3px; line-height:1.5; }
 
-/* handmade build feature card (Adirondack chairs) */
+/* handmade build feature card — compact horizontal */
 .make-card{
-  margin:56px auto 0; max-width:680px; background:var(--white); border-radius:18px;
-  overflow:hidden; border:1.5px dashed var(--rose-line);
-  box-shadow:0 18px 38px -24px rgba(0,0,0,.45);
+  margin:48px auto 0; max-width:560px; display:grid; grid-template-columns:210px 1fr;
+  background:var(--white); border-radius:16px; overflow:hidden;
+  border:1.5px dashed var(--rose-line); box-shadow:0 16px 34px -24px rgba(0,0,0,.4);
 }
-.make-card img{ width:100%; height:auto; display:block; }
-.make-card figcaption{ padding:18px 24px 20px; text-align:center; }
-.make-card figcaption b{ font-family:var(--serif); font-size:21px; color:var(--ink); display:block; }
-.make-card figcaption span{ font-size:13.5px; color:var(--ink-soft); }
+.make-card img{ width:100%; height:100%; object-fit:cover; display:block; }
+.make-card figcaption{ padding:18px 22px; align-self:center; text-align:left; }
+.make-card figcaption b{ font-family:var(--serif); font-size:19px; color:var(--ink); display:block; margin-bottom:7px; }
+.make-card figcaption span{ font-size:13.5px; color:var(--ink-soft); line-height:1.55; }
+@media (max-width:560px){
+  .make-card{ grid-template-columns:1fr; max-width:360px; }
+  .make-card img{ height:200px; }
+}
 
 /* coursework chips */
 .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }

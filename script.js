@@ -42,7 +42,7 @@ const GALLERY = [
 const CUBESAT = {
   title:'The CubeSat Project',
   meta:'MIT Beaver Works · Finalist · Lunar imaging',
-  imgs:['cs1','cs7','cs2','cs4','cs6','cs8','cs3','cs5'],
+  imgs:['cs1','cs9','cs7','cs2','cs4','cs6','cs8','cs3','cs5'],
 };
 const CUBESAT_DESC = "A finalist in the MIT Beaver Works CubeSat program, run by MIT Lincoln Laboratory. The project's goal was to support NASA's Artemis missions — designing a miniature satellite to orbit the Moon and scout surface points of interest. Working independently with a small team of friends, Emma helped build and test imaging against simulated lunar environments: the regolith craters, terrain models, and photo rig shown here.";
 
