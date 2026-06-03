@@ -38,11 +38,16 @@ const GALLERY = [
     desc:"A very early project of mine, this gown was inspired by the empire waistlines and florals I kept seeing as Bridgerton infiltrated my Pinterest. It has big sheer sleeves, an invisible zipper, and a simple lightly gathered skirt." },
   { title:'Junior Prom Dress',    meta:'Floral appliqué · pearl beading · India silk',   imgs:['p02','p42','p44','p46','p45','p47'],
     desc:"This was my junior year prom dress, which I created in my Independent Art class. Created using fabric that a friend brought back from India, it features a low neckline and invisible zipper closure, along with around a dozen handmade floral appliqués and sea bead embellishments along the bust and waist seams." },
-  { title:'Olive Satin Dress',    meta:'Long sleeves · draped satin',                   imgs:['p43'] },
-  { title:'Pink Gingham Sundress',meta:'Gingham · fit-and-flare · handmade',            imgs:['p39'] },
-  { title:'Tailored Plaid Jacket',meta:'Cropped · fully lined',                         imgs:['p09','p11'] },
-  { title:'Knit A-Line Dress',    meta:'Sleeveless · structured skirt',                 imgs:['p17','p18'] },
-  { title:'Light Blue Knit Top',  meta:'Boat-neck · fitted · handmade',                 imgs:['p40'] },
+  { title:'Freshman Homecoming Dress', meta:"Freshman year · 1980's sleeve pattern · first invisible zipper", imgs:['p43'],
+    desc:"This was my freshman year homecoming dress (I also made my friends'!) and while it is not the best gown I have made, I learned a lot from it. The sleeves are from an old 1980's pattern, and the rest I made myself. I learned how to deal with incredibly slick fabrics, and figured out invisible zippers for the first time on this dress!" },
+  { title:'Barbie Halloween Costume', meta:'Barbie-movie recreation · box-pleat skirt · 4-panel bodice', imgs:['p39'],
+    desc:"This is a recreation of Margot Robbie's outfit in the Barbie movie, for a friend! It has a very simple box pleat skirt, and a 4 panel bodice with an invisible zipper closure." },
+  { title:'Purple Wool Cropped Blazer', meta:'60+ hours · lilac velvet lining · cropped wool', imgs:['p09','p11'],
+    desc:"This project was all about improving my technical skills. While I had been sewing for almost 6 years at this point, I felt I was still missing a lot of critical skills, like pattern reading, hand sewing, and understanding complicated linings. This jacket helped me refine all of these skills. It took 60+ hours to make, and has a fantastic lilac velvet lining. I hand sewed the bottom of the lining in, and added a back pleat into the lining for extra comfortability. Overall, it is one of the most technically impressive garments I have made so far!" },
+  { title:'Simple Wool Dress',    meta:'Self-drafted · two-panel · most-worn favorite', imgs:['p17','p18'],
+    desc:"I made this gown using (once again) my favorite self drafted shirt pattern. It's incredibly simple, featuring only two panels and two back darts for extra shaping. Despite its simple pattern, it is one of my most worn items, and continues to be a favorite of mine. I also created a matching jacket, but I unfortunately need to add in some extra fabric stiffener into the collar before I can wear it out." },
+  { title:'Boatneck Top',         meta:'Self-drafted · one pattern piece · made in 4 colors', imgs:['p40'],
+    desc:"As my favorite thing I've ever made, this self drafted shirt has been used no less than a dozen times for a variety of purposes. I have created the top itself in 4 different colors, and have used the pattern as a base for 3 separate dresses. It is the most simple pattern possible, as a single pattern piece creates both the front and back panels. There are no darts, no buttons, and no zipper. Only 4 pieces created out of one pattern piece. However, it is a staple in my wardrobe and will continue to be my most used pattern." },
 ];
 
 /* CubeSat engineering project — opens in the same carousel */
@@ -51,7 +56,7 @@ const CUBESAT = {
   meta:'MIT Beaver Works · Finalist · Lunar imaging',
   imgs:['cs1','cs9','cs7','cs2','cs4','cs6','cs8','cs3','cs5'],
 };
-const CUBESAT_DESC = "A finalist in the MIT Beaver Works CubeSat program, run by MIT Lincoln Laboratory. The project's goal was to support NASA's Artemis missions — designing a miniature satellite to orbit the Moon and scout surface points of interest. Working independently with a small team of friends, Emma helped build and test imaging against simulated lunar environments: the regolith craters, terrain models, and photo rig shown here.";
+const CUBESAT_DESC = "A finalist in the MIT Beaver Works CubeSat program, run by MIT Lincoln Laboratory. The project's goal was to support NASA's Artemis missions — designing a miniature satellite to orbit the Moon and scout surface points of interest. Working independently with a small team of friends, I helped build and test imaging against simulated lunar environments: the regolith craters, terrain models, and photo rig shown here.";
 
 const galleryEl = document.getElementById('gallery');
 galleryEl.innerHTML = GALLERY.map((g,i) => `
@@ -108,7 +113,7 @@ function openSet(set, opt, startIdx){
 }
 function openModal(i){
   const g = GALLERY[i];
-  openSet(g, { kicker:'Handmade by Emma', note:'— How it was made —',
+  openSet(g, { kicker:'Handmade by me', note:'— How it was made —',
                desc: g.desc || 'Put description of how you made it.', placeholder: !g.desc });
 }
 function openCubesat(idx){
