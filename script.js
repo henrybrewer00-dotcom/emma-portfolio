@@ -41,10 +41,10 @@ const GALLERY = [
 /* CubeSat engineering project — opens in the same carousel */
 const CUBESAT = {
   title:'The CubeSat Project',
-  meta:'MIT CubeSat Initiative · Finalist · Lunar imaging',
-  imgs:['cs1','cs2','cs4','cs6','cs3','cs5'],
+  meta:'MIT Beaver Works · Finalist · Lunar imaging',
+  imgs:['cs1','cs7','cs2','cs4','cs6','cs8','cs3','cs5'],
 };
-const CUBESAT_DESC = "An MIT CubeSat Initiative finalist. Working independently with a small team of friends, Emma helped design a miniature satellite built to orbit the Moon and scout surface points of interest for NASA — including hand-building and testing imaging against a simulated lunar surface: the regolith craters and foam terrain models shown here.";
+const CUBESAT_DESC = "A finalist in the MIT Beaver Works CubeSat program, run by MIT Lincoln Laboratory. The project's goal was to support NASA's Artemis missions — designing a miniature satellite to orbit the Moon and scout surface points of interest. Working independently with a small team of friends, Emma helped build and test imaging against simulated lunar environments: the regolith craters, terrain models, and photo rig shown here.";
 
 const galleryEl = document.getElementById('gallery');
 galleryEl.innerHTML = GALLERY.map((g,i) => `
@@ -104,7 +104,7 @@ function openModal(i){
                         desc:'Put description of how you made it.', placeholder:true });
 }
 function openCubesat(idx){
-  openSet(CUBESAT, { kicker:'MIT CubeSat · Finalist', note:'— About the project —',
+  openSet(CUBESAT, { kicker:'MIT Beaver Works · Finalist', note:'— About the project —',
                      desc:CUBESAT_DESC, placeholder:false }, idx);
 }
 carPrev.addEventListener('click', () => step(-1));
