@@ -459,21 +459,22 @@ button{ font-family:inherit; cursor:pointer; }
   .quality{ grid-template-columns:repeat(2,1fr); gap:18px 6px; }
   .quality .q:nth-child(3)::before{ display:none; }
 }
-/* ---- phones: stack the timeline into one clean full-width column ---- */
+/* ---- phones: timeline as a 2-column grid of milestone cards ---- */
 @media (max-width:700px){
+  .timeline{ display:grid; grid-template-columns:1fr 1fr; gap:24px 16px; align-items:start; }
   .timeline::before{ display:none; }
   .t-row,
   .t-row.left,
-  .t-row.right{ grid-template-columns:1fr; gap:0; margin-bottom:40px; min-height:0; }
+  .t-row.right{ display:flex; flex-direction:column; margin:0; min-height:0; }
   .t-node{ display:none; }
   .t-row .t-text,
-  .t-row.right .t-text{ order:1; text-align:left; padding:0 0 12px; }
+  .t-row.right .t-text{ order:1; text-align:left; padding:0 0 8px; }
   .t-row .t-photo,
   .t-row.left .t-photo,
   .t-row.right .t-photo{ order:2; padding:0; }
-  .t-photo img{ width:100%; height:auto; }
-  .t-num{ font-size:26px; }
-  .t-text h3{ font-size:20px; }
+  .t-photo img{ width:100%; height:auto; border-radius:14px; }
+  .t-num{ font-size:21px; }
+  .t-text h3{ font-size:14.5px; line-height:1.25; }
 }
 @media (max-width:560px){
   .hero-name{ font-size:64px; }
